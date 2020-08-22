@@ -5,7 +5,7 @@
 
 * **Creator:** TrivalenT
 * **Category:** Reverse Engineering
-* **Files:** [s3cr3t.pyc]()
+* **Files:** [s3cr3t.pyc](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/s3cr3t.pyc)
 
 ## Walkthrough
 
@@ -18,15 +18,15 @@ So, we can *decompile* this file which is convert this file to a `.py` using a t
 
 Ok, so let's get the `.py` file to take a look at the source code.
 
-[decompiled]()
+![decompiled](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/images/decompiled.png)
 
 I am going to use `nvim` to read the source. Inside the source, we mainly find **three functions**: `kraitrot`, `cobraverse` and `vipershift`. 
 
-[functions]()
+![functions](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/images/functions.png)
 
 And then there is another interesting thing is the the **if-statement** and inside the **if-statement**, the **hex values** which are being compared to input we give after making it go through the functions mentioned above. And then the print statement below it says **"Congrats for the flag anyways"**.
 
-[if-statement]()
+![if-statement](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/images/if-statement.png)
 
 Hmmm........ So the hex must be the flag, just in a different form, or you can say *encrypted form* so to get it, we need to reverse the three **functions**. Ok then mates, let's begin...
 
@@ -48,7 +48,7 @@ Ok then, let's take a look at the function line by line:
             * and then uses the `hex()` function on that number to convert it to *hexadecimal*
             * and at last, removes the inital **'0x'** at the beginning of the hexadecimal number using `[2:]`
 
-Alright, now we know what the function is doing and I am sure we all realize, that we just need to find a way to reverse `a = hex(ord(s[i]) + 20)[2:]` and that should itself lead us to reversing the function. So, to reverse the statement, we start backwards based on how the statement was working according to our analysis. And is the *psuedocode* for this:
+Alright, now we know what the function is doing and I am sure we all realize, that we just need to find a way to reverse <br>`a = hex(ord(s[i]) + 20)[2:]` and that should itself lead us to reversing the function. So, to reverse the statement, we start backwards based on how the statement was working according to our analysis. And is the *psuedocode* for this:
 1. Take a hex as a string input
 2. Iterate over the string such that we are able to get all the hexadecimal numbers individually, that is, iterating over it in chunks of two
 3. Take the hex number and convert it back to *decimal*
@@ -80,7 +80,7 @@ def reverse_vipershift(string):
 enc_flag = '867387738d7c8284688f454745737c4488894784884491575a807a738787'
 print("Running reverse_vipershift(enc_flag): " + reverse_vipershift(enc_flag))
 ```
-[reverse_vipershift]()
+![reverse_vipershift](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/images/reverse_vipershift.png)
 
 Alright!! Although its still jibrish but we can still say that it has started to look like a flag now!
 
@@ -136,13 +136,13 @@ def reverse_cobraverse(cipher):
 enc_flag = '867387738d7c8284688f454745737c4488894784884491575a807a738787'
 print("Running reverse_cobraverse(reverse_vipershift(enc_flag)): " + reverse_cobraverse(reverse_vipershift(enc_flag)))
 ```
-[reverse_cobraverse]()
+![reverse_cobraverse](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/images/reverse_cobraverse.png)
 
 Ok, now this is great!! Well, obviously, you can alreay see the flag right in front of you! But anyway, we should still move forward to open this last lock.
 
 Well, I will be pretty brief about this function as it is a fairly simple one
 
-###### Analysis
+#### Analysis
 > This function is simply creating two parts of the string we input based on a given index and then interchanging their positions
 
 So, here is the *pseudocode* for our `reverse_kraitrot()` function:
@@ -186,7 +186,7 @@ def reverse_kraitrot(cipher, d):
 enc_flag = '867387738d7c8284688f454745737c4488894784884491575a807a738787'
 print("Running reverse_kraitrot(reverse_cobra(reverse_vipershift(enc_flag))): " + reverse_kraitrot(reverse_cobra(reverse_vipershift(enc_flag)), 15))
 ```
-[reverse_kraitrot]()
+![reverse_kraitrot](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/images/reverse_kraitrot.png)
 
 And voila!!! There is our flag!!!
 
