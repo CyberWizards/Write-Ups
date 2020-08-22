@@ -14,7 +14,7 @@ Alright, so we are given a **python bytecode** `(.pyc)` file.
 > You can read more about this [here](https://opensource.com/article/18/4/introduction-python-bytecode)
 
 So, we can *decompile* this file which is convert this file to a `.py` using a tool called **uncompyle6**.
-> YOu can get this tool from [Pypi: uncompyle6](https://pypi.org/project/uncompyle6/)
+> You can get this tool from [Pypi: uncompyle6](https://pypi.org/project/uncompyle6/)
 
 Ok, so let's get the `.py` file to take a look at the source code.
 
