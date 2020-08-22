@@ -96,7 +96,7 @@ So here is the pseudocode we will get that will help us reverse this function:
 2. Divide the string into two equal parts
 3. Store both the parts in separate variables
 4. Iterate over both the first and second part simultaneously and add their characters to a new string variable in such a way that in each loop, the character of the first part comes before its corresponding second part.
-> To achieve that simultaneous iteration, I am going to use the `zip()` function in python but if you wish, you can even simply do this only using the `range()` function
+   > To achieve that simultaneous iteration, I am going to use the `zip()` function in python but if you wish, you can even simply do this only using the `range()` function
 
 5. Return the new string variable we get after this loop
 
