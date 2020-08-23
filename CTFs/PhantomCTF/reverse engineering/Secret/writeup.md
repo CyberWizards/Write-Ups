@@ -18,15 +18,15 @@ So, we can *decompile* this file which is convert this file to a `.py` using a t
 
 Ok, so let's get the `.py` file to take a look at the source code.
 
-![decompiled](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/images/decompiled.png)
+![decompiled](https://github.com/CyberWizards/Write-Ups/raw/master/CTFs/PhantomCTF/reverse%20engineering/Secret/images/decompiled.png)
 
 I am going to use `nvim` to read the source. Inside the source, we mainly find **three functions**: `kraitrot`, `cobraverse` and `vipershift`. 
 
-![functions](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/images/functions.png)
+![functions](https://github.com/CyberWizards/Write-Ups/raw/master/CTFs/PhantomCTF/reverse%20engineering/Secret/images/functions.png)
 
 And then there is another interesting thing is the the **if-statement** and inside the **if-statement**, the **hex values** which are being compared to input we give after making it go through the functions mentioned above. And then the print statement below it says **"Congrats for the flag anyways"**.
 
-![if-statement](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/images/if-statement.png)
+![if-statement](https://github.com/CyberWizards/Write-Ups/raw/master/CTFs/PhantomCTF/reverse%20engineering/Secret/images/if-statement.png)
 
 Hmmm........ So the hex must be the flag, just in a different form, or you can say *encrypted form* so to get it, we need to reverse the three **functions**. Ok then mates, let's begin...
 
@@ -80,7 +80,7 @@ def reverse_vipershift(string):
 enc_flag = '867387738d7c8284688f454745737c4488894784884491575a807a738787'
 print("Running reverse_vipershift(enc_flag): " + reverse_vipershift(enc_flag))
 ```
-![reverse_vipershift](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/images/reverse_vipershift.png)
+![reverse_vipershift](https://github.com/CyberWizards/Write-Ups/raw/master/CTFs/PhantomCTF/reverse%20engineering/Secret/images/reverse_vipershift.png)
 
 Alright!! Although its still jibrish but we can still say that it has started to look like a flag now!
 
@@ -136,7 +136,7 @@ def reverse_cobraverse(cipher):
 enc_flag = '867387738d7c8284688f454745737c4488894784884491575a807a738787'
 print("Running reverse_cobraverse(reverse_vipershift(enc_flag)): " + reverse_cobraverse(reverse_vipershift(enc_flag)))
 ```
-![reverse_cobraverse](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/images/reverse_cobraverse.png)
+![reverse_cobraverse](https://github.com/CyberWizards/Write-Ups/raw/master/CTFs/PhantomCTF/reverse%20engineering/Secret/images/reverse_cobraverse.png)
 
 Ok, now this is great!! Well, obviously, you can alreay see the flag right in front of you! But anyway, we should still move forward to open this last lock.
 
@@ -186,7 +186,7 @@ def reverse_kraitrot(cipher, d):
 enc_flag = '867387738d7c8284688f454745737c4488894784884491575a807a738787'
 print("Running reverse_kraitrot(reverse_cobra(reverse_vipershift(enc_flag))): " + reverse_kraitrot(reverse_cobra(reverse_vipershift(enc_flag)), 15))
 ```
-![reverse_kraitrot](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/images/reverse_kraitrot.png)
+![reverse_kraitrot](https://github.com/CyberWizards/Write-Ups/raw/master/CTFs/PhantomCTF/reverse%20engineering/Secret/images/reverse_kraitrot.png)
 
 And voila!!! There is our flag!!!
 
