@@ -10,7 +10,7 @@
 ## Walkthrough
 
 Alright, so we are given a **python bytecode** `(.pyc)` file. 
-> Python bytecode is the intermediate file created by the python interpreter that so that it can be run by the **Python Virtual Information (PVM)**
+> Python bytecode is the intermediate file created by the python interpreter so that it can be run by the **Python Virtual Information (PVM)**
 > You can read more about this [here](https://opensource.com/article/18/4/introduction-python-bytecode)
 
 So, we can *decompile* this file which is convert this file to a `.py` using a tool called **uncompyle6**.
