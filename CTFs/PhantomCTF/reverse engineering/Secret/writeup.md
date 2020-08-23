@@ -20,11 +20,11 @@ Ok, so let's get the `.py` file to take a look at the source code.
 
 ![decompiled](https://github.com/CyberWizards/Write-Ups/raw/master/CTFs/PhantomCTF/reverse%20engineering/Secret/images/decompiled.png)
 
-I am going to use `nvim` to read the source. Inside the source, we mainly find **three functions**: `kraitrot`, `cobraverse` and `vipershift`. 
+I am going to use `nvim` to read the source. Inside the source, we find **three functions**: `kraitrot`, `cobraverse` and `vipershift`. 
 
 ![functions](https://github.com/CyberWizards/Write-Ups/raw/master/CTFs/PhantomCTF/reverse%20engineering/Secret/images/functions.png)
 
-And then there is another interesting thing is the the **if-statement** and inside the **if-statement**, the **hex values** which are being compared to input we give after making it go through the functions mentioned above. And then the print statement below it says **"Congrats for the flag anyways"**.
+And then there is another interesting thing that is the the **if-statement** and inside the **if-statement**, the **hex values** which are being compared to input we give after making it go through the functions mentioned above. And then the print statement below it says **"Congrats for the flag anyways"**.
 
 ![if-statement](https://github.com/CyberWizards/Write-Ups/raw/master/CTFs/PhantomCTF/reverse%20engineering/Secret/images/if-statement.png)
 
