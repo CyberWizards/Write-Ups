@@ -5,7 +5,7 @@
 
 * **Creator:** TrivalenT
 * **Category:** Reverse Engineering
-* **Files:** [s3cr3t.pyc](https://github.com/CyberWizards/Write-Ups/raw/master/reverse%20engineering/Secret/s3cr3t.pyc)
+* **Files:** [s3cr3t.pyc](https://github.com/CyberWizards/Write-Ups/raw/master/CTFs/PhantomCTF/reverse%20engineering/Secret/s3cr3t.pyc)
 
 ## Walkthrough
 
