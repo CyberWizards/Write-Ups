@@ -48,7 +48,7 @@ Ok then, let's take a look at the function line by line:
             * and then uses the `hex()` function on that number to convert it to *hexadecimal*
             * and at last, removes the inital **'0x'** at the beginning of the hexadecimal number using `[2:]`
 
-Alright, now we know what the function is doing and I am sure we all realize, that we just need to find a way to reverse <br>`a = hex(ord(s[i]) + 20)[2:]` and that should itself lead us to reversing the function. So, to reverse the statement, we start backwards based on how the statement was working according to our analysis. And is the *psuedocode* for this:
+Alright, now we know what the function is doing and I am sure we all realize, that we just need to find a way to reverse <br>`a = hex(ord(s[i]) + 20)[2:]` and that should itself lead us to reversing the function. So, to reverse the statement, we start backwards based on how the statement was working according to our analysis. And here is the *psuedocode* for this:
 1. Take a hex as a string input
 2. Iterate over the string such that we are able to get all the hexadecimal numbers individually, that is, iterating over it in chunks of two
 3. Take the hex number and convert it back to *decimal*
@@ -88,7 +88,7 @@ Well then, let's move towards opening the next lock which is the `cobraverse()` 
 * `def cobraverse(s):` --> Simply defines the function and takes `s` as an argument. Now let's dive into the function:
     * `g = ''` --> Creates an empty string and stores it in `g`
     * `g += s[1::2]` --> So, it starts at the index of `1` and goes till the end of the `s` with a step of `2`. So what this does, in simple words, is take all the characters at the **odd indexes** in `s`  and adds it to `g`
-    * `g += s[0::2]` --> This function does the same thing as the above statement, just instead of **odd** it takes **even indexes** in `s` and add it to `g`
+    * `g += s[0::2]` --> This function does the same thing as the above statement, just instead of **odd** it takes **even indexes** in `s` and adds it to `g`
     * `return g` --> Returns the value of `g`
 
 So here is the pseudocode we will get that will help us reverse this function:
@@ -147,7 +147,7 @@ Well, I will be pretty brief about this function as it is a fairly simple one
 
 So, here is the *pseudocode* for our `reverse_kraitrot()` function:
 #### Psuedocode
-> We simply take a string and the index where it wsa divided and then create two parts and then interchange the position of those two parts
+> We simply take a string and the index where it was divided and then create two parts and then interchange the position of those two parts
 
 And here is how our `reverse_kraitrot()` function will look like:
 ```py
