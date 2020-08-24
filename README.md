@@ -1,12 +1,8 @@
 # Write-Ups by the Cyber Wizards
 
----
-
 ## TryHackMe Write-Ups
 
 Head to [TryHackMe: Writeups]() to take a look at the writeups on the various rooms on [TryHackMe](https://tryhackme.com/)
-
----
 
 ## CTF Write-Ups
 
