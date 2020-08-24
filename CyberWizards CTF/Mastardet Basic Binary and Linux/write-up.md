@@ -1,4 +1,4 @@
-# mastardet's first challenge.
+# mastardet's first challenge
  
 #### Big thanks for [@mastardet](https://www.youtube.com/channel/UC66idcoWzeZ_AsTnYr3L37g/featured) for the creating the challenge, a great guy with a lot of experince and a good mentor.
 
