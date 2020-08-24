@@ -10,6 +10,6 @@ Capture the Flags are a great place to practice your hacking skills and also gre
 
 ## CyberWizards CTF
 
-This is the CTF competition which we organise for our members to help them test and improve their skills. We have some great people who are really work hard to prepare these challenges. If you wanna try those challenges out on your own then make sure you check out [CyberWizards CTF](). You will even find the detailed write-ups of the challenges there!
+This is the CTF competition which we organise for our members to help them test and improve their skills. We have some great people who are really work hard to prepare these challenges. If you wanna try those challenges out on your own then make sure you check out [CyberWizards CTF](https://cyberwizards.github.io/Write-Ups/CyberWizards%20CTF/). You will even find the detailed write-ups of the challenges there!
 
 Hope this site is able to help you all hone your skills. All the best and keep hacking...
